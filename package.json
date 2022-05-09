@@ -18,7 +18,8 @@
     "build:cjs": "tsc",
     "test": "jest",
     "format": "prettier --write .",
-    "prerelease": "yarn build"
+    "prerelease": "yarn build",
+    "generate-readme": "node scripts/generate-readme.mjs"
   },
   "devDependencies": {
     "@swc/core": "^1.2.179",
