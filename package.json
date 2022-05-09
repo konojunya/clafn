@@ -13,6 +13,7 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc",
     "test": "jest",
+    "format": "prettier --write .",
     "publish": "npm publish --access=public",
     "prepublish": "yarn build"
   },

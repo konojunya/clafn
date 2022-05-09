@@ -1,2 +1,2 @@
 // class
-export * from "./class/Map";
+export * from "./class/Map/regexp-map";

@@ -1,2 +1,3 @@
-# clafn
-clafn  is JavaScript Utilities Class and Functions
+# clafn(cræf)
+
+clafn is JavaScript Utilities Class and Functions
