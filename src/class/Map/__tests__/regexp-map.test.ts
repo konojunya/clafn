@@ -1,6 +1,6 @@
 import { RegExpMap } from "../regexp-map";
 
-describe("regexp-map", () => {
+describe("class/Map/RegExpMap", () => {
   // RegExpMap
   test("Should size is same", () => {
     const map = new Map([[/test1/, "test1"]]);
