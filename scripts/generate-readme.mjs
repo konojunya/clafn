@@ -30,7 +30,7 @@ for (const directory of directories) {
     const testFileDir = path.resolve(ROOT_DIR, inner, "__tests__");
     const files = getFiles(testFileDir);
 
-    links += `\n## [${directory}/${innerDirectory}](${GITHUB_SRC_PATH}/${directory}/${innerDirectory}/README.md)\n`;
+    links += `\n### [${directory}/${innerDirectory}](${GITHUB_SRC_PATH}/${directory}/${innerDirectory}/README.md)\n`;
     let content = "";
 
     for (const file of files) {
@@ -51,7 +51,24 @@ ${content}
   }
 }
 
-fs.writeFileSync(
-  path.resolve(dirname, "../README.md"),
-  "# clafn(cræf)\n\nclafn is JavaScript Utilities Class and Functions\n" + links
-);
+const content = [
+  "# clafn(cræf)\n",
+  "clafn is JavaScript Utilities Class and Functions",
+  "\n## Usage",
+  links,
+  "\n## CONTRIBUTING\n",
+  [
+    "Always welcoming your contribution!\n",
+    "1. Fork",
+    "2. Create a feature branch",
+    "3. Write your code",
+    "4. Write your test",
+    "5. Run README.md generator `$yarn generate-readme`",
+    "6. Run test suite with the `$yarn test` command and confirm that it passes",
+    "7. Commit your changes",
+    "8. Rebase your local changes against the `main` branch",
+    "9. Create new Pull Request",
+  ].join("\n"),
+].join("\n");
+
+fs.writeFileSync(path.resolve(dirname, "../README.md"), content);
