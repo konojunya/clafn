@@ -4,18 +4,19 @@
   "main": "dist/cjs/index.js",
   "types": "dist/esm/index.js",
   "module": "dist/esm/index.js",
+  "files": ["dist"],
   "repository": "ssh://git@github.com/konojunya/clafn.git",
   "author": "konojunya <junya03dance@gmail.com>",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
+    "typecheck": "tsc --noEmit",
     "build": "run-p build:*",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc",
     "test": "jest",
     "format": "prettier --write .",
-    "publish": "npm publish --access=public",
-    "prepublish": "yarn build"
+    "prerelease": "yarn build"
   },
   "devDependencies": {
     "@swc/core": "^1.2.179",

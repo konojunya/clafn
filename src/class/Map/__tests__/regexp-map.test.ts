@@ -9,11 +9,16 @@ describe("regexp-map", () => {
     expect(map.size).toEqual(regExpMap.size);
   });
 
-  test("Should has can be used", () => {
+  test("Should match return boolean", () => {
     const map = new RegExpMap([[/te.*/, "test1"]]);
-    const map2 = new Map([[/te.*/, "test1"]]);
 
     expect(map.match("test")).toBeTruthy();
     expect(map.match("t1")).toBeFalsy();
+  });
+
+  test("Should get return value", () => {
+    const map = new RegExpMap([[/te.*/, "test1"]]);
+
+    expect(map.get("test")).toEqual("test1");
   });
 });
